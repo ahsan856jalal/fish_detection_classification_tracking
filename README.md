@@ -27,7 +27,7 @@ For google Colab, alternatively, following command can be run to install all the
 pip install -r requirements.txt
 ```
 
-Once the repository has been cloned, place the files provided on google drive [link](https://drive.google.com/drive/folders/1Likirnxy4cFivSAD_mcs1WdXUyNzUese?usp=sharing) in `fish_detection_classification_tracking/trained/`
+Once the repository has been cloned, place the files provided on google drive [link](https://drive.google.com/drive/folders/1GxfMIrP9S9rijaL50OnDxDAAhiGPW12n?usp=sharing) in `fish_detection_classification_tracking/trained/`
 
 ### Usage:
 Before running, if a conda environment is being used, please activate it by running the following command:
