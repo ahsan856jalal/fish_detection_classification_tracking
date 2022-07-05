@@ -80,6 +80,7 @@ Now we will run ``` python merging_yolo_optical_hist_text.py ``` to merge Optica
 
 Run ``` python optical_yolo_merge_fscore.py ``` to calculate F-score and Accuracy values on the test set as cited in the paper
 
-
+# Guide for Usage of Fish Classification:
+Run ''' python test_results_gen.py '''to get F-scores and accuracies on test and validation splits for 153 and 496 classes respectively.
 
 
