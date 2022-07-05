@@ -51,11 +51,41 @@ Note: The provided path can contain both videos and images at the same time. For
 This part guides you to run the spatio-temporal based fish detection part to get the cited accuracies and F-scores.
 
 ### Setting up the cdoe:
-place the data files provided on google drive [link] (https://drive.google.com/drive/folders/1ro04nd8yyHsOJb66JZz-eCMvvZHexT3V?usp=sharing) in 'fish_detection_classification_tracking/data/'
+place the data files provided on google drive [link] (https://drive.google.com/drive/folders/1ro04nd8yyHsOJb66JZz-eCMvvZHexT3V?usp=sharing) in `fish_detection_classification_tracking/data/`
 
-Run '''python kmeans_on_hist.py'''' to get kmeans based color segmentation on Optical flow histogram equilized data.
+Run ```python kmeans_on_hist.py``` to get kmeans based color segmentation on Optical flow histogram equilized data.
 
 ### Build YOLOv4:
-clone the yolov4 repo in 'fish_detection_classification_tracking'folder '''git clone https://github.com/AlexeyAB/darknet.git yolo_framework''
+clone the yolov4 repo in `fish_detection_classification_tracking` folder' by running these commands
 
-''cd yolo_framework''' vim Makefile Edit first 9 lines with this
+```git clone https://github.com/AlexeyAB/darknet.git yolo_framework```
+
+```cd yolo_framework```
+
+```vim Makefile```
+
+Edit first 9 lines with this:
+
+```
+CUDNN=1
+CUDNN_HALF=1
+OPENCV=1
+AVX=0
+OPENMP=1
+LIBSO=1
+ZED_CAMERA=0
+ZED_CAMERA_v2_8=0
+```
+After this run:  ``` make ```
+
+After successful build run ``` cd .. ```
+
+### Usage:
+Run ```python optical_results.py``` This will apply fish detector on optical_kmeans blobs and save text files
+
+Now we will run ```python merging_yolo_optical_hist_text.py``` to merge Optical_kmeans results with YOLO results
+
+Run ```python optical_yolo_merge_fscore.py``` to calculate F-score and Accuracy values on the test set as cited in the paper
+
+# Guide for Usage of Fish Classification:
+Run ``` python test_results_gen.py ``` to get F-scores and accuracies on test and validation splits for 153 and 496 classes respectively.
