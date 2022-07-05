@@ -28,7 +28,7 @@ For google Colab, alternatively, following command can be run to install all the
 pip install -r requirements.txt
 ```
 
-Once the repository has been cloned, place the files provided on google drive [link](https://drive.google.com/drive/folders/1GxfMIrP9S9rijaL50OnDxDAAhiGPW12n?usp=sharing) in `fish_detection_classification_tracking/trained/`
+Once the repository has been cloned, place the files provided on google drive [link] (https://drive.google.com/drive/folders/1GxfMIrP9S9rijaL50OnDxDAAhiGPW12n?usp=sharing) in `fish_detection_classification_tracking/trained/`
 
 ### Usage:
 Before running, if a conda environment is being used, please activate it by running the following command:
@@ -47,3 +47,15 @@ Once the code runs completely, a file named `detections.csv` will be stored in {
 
 Note: The provided path can contain both videos and images at the same time. For images, the frame_no will always be zero in 'detections.csv'
 
+# Guide for Usage of Spatio-temporal Fish Detection:
+This part guides you to run the spatio-temporal based fish detection part to get the cited accuracies and F-scores.
+
+### Setting up the cdoe:
+place the data files provided on google drive [link] (https://drive.google.com/drive/folders/1ro04nd8yyHsOJb66JZz-eCMvvZHexT3V?usp=sharing) in 'fish_detection_classification_tracking/data/'
+
+Run '''python kmeans_on_hist.py'''' to get kmeans based color segmentation on Optical flow histogram equilized data.
+
+### Build YOLOv4:
+clone the yolov4 repo in 'fish_detection_classification_tracking'folder '''git clone https://github.com/AlexeyAB/darknet.git yolo_framework''
+
+''cd yolo_framework''' vim Makefile Edit first 9 lines with this
