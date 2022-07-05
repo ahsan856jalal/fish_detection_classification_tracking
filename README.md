@@ -50,7 +50,7 @@ Note: The provided path can contain both videos and images at the same time. For
 This part guides you to run the spatio-temporal based fish detection part to get the cited accuracies and F-scores.
 ### Setting up the code:
 
-place the data files provided on google drive [link](https://drive.google.com/drive/folders/1ro04nd8yyHsOJb66JZz-eCMvvZHexT3V?usp=sharing) in `fish_detection_classification_tracking/data/`
+place the data files provided on google drive [link] (https://drive.google.com/drive/folders/1ro04nd8yyHsOJb66JZz-eCMvvZHexT3V?usp=sharing) in `fish_detection_classification_tracking/data/`
 
  Run ``` python kmeans_on_hist.py ``` to get kmeans based color segmentation on Optical flow histogram equilized data.
 ### Build YOLOv4
